@@ -47,12 +47,6 @@ namespace Hatch.Web.Startup
                  options.SaveTokens = true;
                  options.SignInScheme = IdentityConstants.ExternalScheme;
 
-                 options.Events.OnTicketReceived = async opt => {
-
-                     opt.HttpContext.User.AddIdentity(new ClaimsIdentity(new[] { new Claim(ClaimTypes.NameIdentifier,"behzad")}));
-
-                    await Task.FromResult(0);    
-                 };
 
                  options.Scope.Add("email");
              });
